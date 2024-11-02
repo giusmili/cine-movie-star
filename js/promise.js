@@ -24,6 +24,7 @@ export const displayMovies = (movies)=> {
     movies.forEach(movie => {
         const movieCard = document.createElement("div");
         movieCard.classList.add("movie-card");
+        movieCard.setAttribute("role","group");
 
         movieCard.innerHTML = `
             <img src="${movie.cover_image}" alt="Cover image for ${movie.title}" class="cover-image">
@@ -31,8 +32,7 @@ export const displayMovies = (movies)=> {
             <p><strong>Réalisateur :</strong> ${movie.director}</p>
             <p><strong>Année :</strong> ${movie.year}</p>
             <p><strong>Genres :</strong> ${
-                movie.genre.map(genre => `<span class="genre">${genre}</span>`).join(" ")
-            }</p>
+                movie.genre.map(genre => `<span class="genre">${genre}</span>`).join(" ")}</p>
         `;
 
         movieList.appendChild(movieCard);
